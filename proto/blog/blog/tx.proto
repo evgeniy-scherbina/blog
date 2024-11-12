@@ -19,6 +19,7 @@ service Msg {
   rpc UpdateParams (MsgUpdateParams) returns (MsgUpdateParamsResponse);
   rpc CreatePost   (MsgCreatePost  ) returns (MsgCreatePostResponse  );
   rpc UpdatePost   (MsgUpdatePost  ) returns (MsgUpdatePostResponse  );
+  rpc DeletePost   (MsgDeletePost  ) returns (MsgDeletePostResponse  );
 }
 // MsgUpdateParams is the Msg/UpdateParams request type.
 message MsgUpdateParams {
@@ -58,4 +59,12 @@ message MsgUpdatePost {
 }
 
 message MsgUpdatePostResponse {}
+
+message MsgDeletePost {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 id      = 2;
+}
+
+message MsgDeletePostResponse {}
 
