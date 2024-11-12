@@ -18,6 +18,7 @@ service Msg {
   // parameters. The authority defaults to the x/gov module account.
   rpc UpdateParams (MsgUpdateParams) returns (MsgUpdateParamsResponse);
   rpc CreatePost   (MsgCreatePost  ) returns (MsgCreatePostResponse  );
+  rpc UpdatePost   (MsgUpdatePost  ) returns (MsgUpdatePostResponse  );
 }
 // MsgUpdateParams is the Msg/UpdateParams request type.
 message MsgUpdateParams {
@@ -47,4 +48,14 @@ message MsgCreatePost {
 message MsgCreatePostResponse {
   uint64 id = 1;
 }
+
+message MsgUpdatePost {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  string title   = 2;
+  string body    = 3;
+  uint64 id      = 4;
+}
+
+message MsgUpdatePostResponse {}
 
