@@ -60,6 +60,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:          "Send a delete-post tx",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
 				},
+				{
+					RpcMethod:      "CreateAuthor",
+					Use:            "create-author [firstname] [lastname]",
+					Short:          "Send a create-author tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "firstname"}, {ProtoField: "lastname"}},
+				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
 		},
