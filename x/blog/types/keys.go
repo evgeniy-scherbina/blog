@@ -11,11 +11,18 @@ const (
 	MemStoreKey = "mem_blog"
 
 	// PostKey is used to uniquely identify posts within the system.
-	// It will be used as the beginning of the key for each post, followed bei their unique ID
+	// It will be used as the beginning of the key for each post, followed by their unique ID
 	PostKey = "Post/value/"
 
 	// This key will be used to keep track of the ID of the latest post added to the store.
 	PostCountKey = "Post/count/"
+
+	// AuthorKey is used to uniquely identify authors within the system.
+	// It will be used as the beginning of the key for each author, followed by their unique ID
+	AuthorKey = "Author/value/"
+
+	// This key will be used to keep track of the ID of the latest author added to the store.
+	AuthorCountKey = "Author/count/"
 )
 
 var (
