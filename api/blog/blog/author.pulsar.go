@@ -14,32 +14,32 @@ import (
 )
 
 var (
-	md_Post         protoreflect.MessageDescriptor
-	fd_Post_title   protoreflect.FieldDescriptor
-	fd_Post_body    protoreflect.FieldDescriptor
-	fd_Post_creator protoreflect.FieldDescriptor
-	fd_Post_id      protoreflect.FieldDescriptor
+	md_Author           protoreflect.MessageDescriptor
+	fd_Author_firstname protoreflect.FieldDescriptor
+	fd_Author_lastname  protoreflect.FieldDescriptor
+	fd_Author_creator   protoreflect.FieldDescriptor
+	fd_Author_id        protoreflect.FieldDescriptor
 )
 
 func init() {
-	file_blog_blog_post_proto_init()
-	md_Post = File_blog_blog_post_proto.Messages().ByName("Post")
-	fd_Post_title = md_Post.Fields().ByName("title")
-	fd_Post_body = md_Post.Fields().ByName("body")
-	fd_Post_creator = md_Post.Fields().ByName("creator")
-	fd_Post_id = md_Post.Fields().ByName("id")
+	file_blog_blog_author_proto_init()
+	md_Author = File_blog_blog_author_proto.Messages().ByName("Author")
+	fd_Author_firstname = md_Author.Fields().ByName("firstname")
+	fd_Author_lastname = md_Author.Fields().ByName("lastname")
+	fd_Author_creator = md_Author.Fields().ByName("creator")
+	fd_Author_id = md_Author.Fields().ByName("id")
 }
 
-var _ protoreflect.Message = (*fastReflection_Post)(nil)
+var _ protoreflect.Message = (*fastReflection_Author)(nil)
 
-type fastReflection_Post Post
+type fastReflection_Author Author
 
-func (x *Post) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_Post)(x)
+func (x *Author) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_Author)(x)
 }
 
-func (x *Post) slowProtoReflect() protoreflect.Message {
-	mi := &file_blog_blog_post_proto_msgTypes[0]
+func (x *Author) slowProtoReflect() protoreflect.Message {
+	mi := &file_blog_blog_author_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -50,43 +50,43 @@ func (x *Post) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_Post_messageType fastReflection_Post_messageType
-var _ protoreflect.MessageType = fastReflection_Post_messageType{}
+var _fastReflection_Author_messageType fastReflection_Author_messageType
+var _ protoreflect.MessageType = fastReflection_Author_messageType{}
 
-type fastReflection_Post_messageType struct{}
+type fastReflection_Author_messageType struct{}
 
-func (x fastReflection_Post_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_Post)(nil)
+func (x fastReflection_Author_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_Author)(nil)
 }
-func (x fastReflection_Post_messageType) New() protoreflect.Message {
-	return new(fastReflection_Post)
+func (x fastReflection_Author_messageType) New() protoreflect.Message {
+	return new(fastReflection_Author)
 }
-func (x fastReflection_Post_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_Post
+func (x fastReflection_Author_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_Author
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_Post) Descriptor() protoreflect.MessageDescriptor {
-	return md_Post
+func (x *fastReflection_Author) Descriptor() protoreflect.MessageDescriptor {
+	return md_Author
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_Post) Type() protoreflect.MessageType {
-	return _fastReflection_Post_messageType
+func (x *fastReflection_Author) Type() protoreflect.MessageType {
+	return _fastReflection_Author_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_Post) New() protoreflect.Message {
-	return new(fastReflection_Post)
+func (x *fastReflection_Author) New() protoreflect.Message {
+	return new(fastReflection_Author)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_Post) Interface() protoreflect.ProtoMessage {
-	return (*Post)(x)
+func (x *fastReflection_Author) Interface() protoreflect.ProtoMessage {
+	return (*Author)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -94,28 +94,28 @@ func (x *fastReflection_Post) Interface() protoreflect.ProtoMessage {
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_Post) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
-	if x.Title != "" {
-		value := protoreflect.ValueOfString(x.Title)
-		if !f(fd_Post_title, value) {
+func (x *fastReflection_Author) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Firstname != "" {
+		value := protoreflect.ValueOfString(x.Firstname)
+		if !f(fd_Author_firstname, value) {
 			return
 		}
 	}
-	if x.Body != "" {
-		value := protoreflect.ValueOfString(x.Body)
-		if !f(fd_Post_body, value) {
+	if x.Lastname != "" {
+		value := protoreflect.ValueOfString(x.Lastname)
+		if !f(fd_Author_lastname, value) {
 			return
 		}
 	}
 	if x.Creator != "" {
 		value := protoreflect.ValueOfString(x.Creator)
-		if !f(fd_Post_creator, value) {
+		if !f(fd_Author_creator, value) {
 			return
 		}
 	}
 	if x.Id != uint64(0) {
 		value := protoreflect.ValueOfUint64(x.Id)
-		if !f(fd_Post_id, value) {
+		if !f(fd_Author_id, value) {
 			return
 		}
 	}
@@ -132,21 +132,21 @@ func (x *fastReflection_Post) Range(f func(protoreflect.FieldDescriptor, protore
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_Post) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_Author) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "blog.blog.Post.title":
-		return x.Title != ""
-	case "blog.blog.Post.body":
-		return x.Body != ""
-	case "blog.blog.Post.creator":
+	case "blog.blog.Author.firstname":
+		return x.Firstname != ""
+	case "blog.blog.Author.lastname":
+		return x.Lastname != ""
+	case "blog.blog.Author.creator":
 		return x.Creator != ""
-	case "blog.blog.Post.id":
+	case "blog.blog.Author.id":
 		return x.Id != uint64(0)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Post"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Author"))
 		}
-		panic(fmt.Errorf("message blog.blog.Post does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message blog.blog.Author does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -156,21 +156,21 @@ func (x *fastReflection_Post) Has(fd protoreflect.FieldDescriptor) bool {
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_Post) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_Author) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "blog.blog.Post.title":
-		x.Title = ""
-	case "blog.blog.Post.body":
-		x.Body = ""
-	case "blog.blog.Post.creator":
+	case "blog.blog.Author.firstname":
+		x.Firstname = ""
+	case "blog.blog.Author.lastname":
+		x.Lastname = ""
+	case "blog.blog.Author.creator":
 		x.Creator = ""
-	case "blog.blog.Post.id":
+	case "blog.blog.Author.id":
 		x.Id = uint64(0)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Post"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Author"))
 		}
-		panic(fmt.Errorf("message blog.blog.Post does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message blog.blog.Author does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -180,25 +180,25 @@ func (x *fastReflection_Post) Clear(fd protoreflect.FieldDescriptor) {
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_Post) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_Author) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "blog.blog.Post.title":
-		value := x.Title
+	case "blog.blog.Author.firstname":
+		value := x.Firstname
 		return protoreflect.ValueOfString(value)
-	case "blog.blog.Post.body":
-		value := x.Body
+	case "blog.blog.Author.lastname":
+		value := x.Lastname
 		return protoreflect.ValueOfString(value)
-	case "blog.blog.Post.creator":
+	case "blog.blog.Author.creator":
 		value := x.Creator
 		return protoreflect.ValueOfString(value)
-	case "blog.blog.Post.id":
+	case "blog.blog.Author.id":
 		value := x.Id
 		return protoreflect.ValueOfUint64(value)
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Post"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Author"))
 		}
-		panic(fmt.Errorf("message blog.blog.Post does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message blog.blog.Author does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -212,21 +212,21 @@ func (x *fastReflection_Post) Get(descriptor protoreflect.FieldDescriptor) proto
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_Post) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_Author) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "blog.blog.Post.title":
-		x.Title = value.Interface().(string)
-	case "blog.blog.Post.body":
-		x.Body = value.Interface().(string)
-	case "blog.blog.Post.creator":
+	case "blog.blog.Author.firstname":
+		x.Firstname = value.Interface().(string)
+	case "blog.blog.Author.lastname":
+		x.Lastname = value.Interface().(string)
+	case "blog.blog.Author.creator":
 		x.Creator = value.Interface().(string)
-	case "blog.blog.Post.id":
+	case "blog.blog.Author.id":
 		x.Id = value.Uint()
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Post"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Author"))
 		}
-		panic(fmt.Errorf("message blog.blog.Post does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message blog.blog.Author does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -240,52 +240,52 @@ func (x *fastReflection_Post) Set(fd protoreflect.FieldDescriptor, value protore
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_Post) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_Author) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "blog.blog.Post.title":
-		panic(fmt.Errorf("field title of message blog.blog.Post is not mutable"))
-	case "blog.blog.Post.body":
-		panic(fmt.Errorf("field body of message blog.blog.Post is not mutable"))
-	case "blog.blog.Post.creator":
-		panic(fmt.Errorf("field creator of message blog.blog.Post is not mutable"))
-	case "blog.blog.Post.id":
-		panic(fmt.Errorf("field id of message blog.blog.Post is not mutable"))
+	case "blog.blog.Author.firstname":
+		panic(fmt.Errorf("field firstname of message blog.blog.Author is not mutable"))
+	case "blog.blog.Author.lastname":
+		panic(fmt.Errorf("field lastname of message blog.blog.Author is not mutable"))
+	case "blog.blog.Author.creator":
+		panic(fmt.Errorf("field creator of message blog.blog.Author is not mutable"))
+	case "blog.blog.Author.id":
+		panic(fmt.Errorf("field id of message blog.blog.Author is not mutable"))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Post"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Author"))
 		}
-		panic(fmt.Errorf("message blog.blog.Post does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message blog.blog.Author does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_Post) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_Author) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "blog.blog.Post.title":
+	case "blog.blog.Author.firstname":
 		return protoreflect.ValueOfString("")
-	case "blog.blog.Post.body":
+	case "blog.blog.Author.lastname":
 		return protoreflect.ValueOfString("")
-	case "blog.blog.Post.creator":
+	case "blog.blog.Author.creator":
 		return protoreflect.ValueOfString("")
-	case "blog.blog.Post.id":
+	case "blog.blog.Author.id":
 		return protoreflect.ValueOfUint64(uint64(0))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Post"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: blog.blog.Author"))
 		}
-		panic(fmt.Errorf("message blog.blog.Post does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message blog.blog.Author does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_Post) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_Author) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in blog.blog.Post", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in blog.blog.Author", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -293,7 +293,7 @@ func (x *fastReflection_Post) WhichOneof(d protoreflect.OneofDescriptor) protore
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_Post) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_Author) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -304,7 +304,7 @@ func (x *fastReflection_Post) GetUnknown() protoreflect.RawFields {
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_Post) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_Author) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -316,7 +316,7 @@ func (x *fastReflection_Post) SetUnknown(fields protoreflect.RawFields) {
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_Post) IsValid() bool {
+func (x *fastReflection_Author) IsValid() bool {
 	return x != nil
 }
 
@@ -326,9 +326,9 @@ func (x *fastReflection_Post) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_Post) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_Author) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*Post)
+		x := input.Message.Interface().(*Author)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -340,11 +340,11 @@ func (x *fastReflection_Post) ProtoMethods() *protoiface.Methods {
 		var n int
 		var l int
 		_ = l
-		l = len(x.Title)
+		l = len(x.Firstname)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		l = len(x.Body)
+		l = len(x.Lastname)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
@@ -365,7 +365,7 @@ func (x *fastReflection_Post) ProtoMethods() *protoiface.Methods {
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*Post)
+		x := input.Message.Interface().(*Author)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -396,17 +396,17 @@ func (x *fastReflection_Post) ProtoMethods() *protoiface.Methods {
 			i--
 			dAtA[i] = 0x1a
 		}
-		if len(x.Body) > 0 {
-			i -= len(x.Body)
-			copy(dAtA[i:], x.Body)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Body)))
+		if len(x.Lastname) > 0 {
+			i -= len(x.Lastname)
+			copy(dAtA[i:], x.Lastname)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Lastname)))
 			i--
 			dAtA[i] = 0x12
 		}
-		if len(x.Title) > 0 {
-			i -= len(x.Title)
-			copy(dAtA[i:], x.Title)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Title)))
+		if len(x.Firstname) > 0 {
+			i -= len(x.Firstname)
+			copy(dAtA[i:], x.Firstname)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Firstname)))
 			i--
 			dAtA[i] = 0xa
 		}
@@ -421,7 +421,7 @@ func (x *fastReflection_Post) ProtoMethods() *protoiface.Methods {
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*Post)
+		x := input.Message.Interface().(*Author)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -453,15 +453,15 @@ func (x *fastReflection_Post) ProtoMethods() *protoiface.Methods {
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: Post: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: Author: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: Post: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: Author: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Title", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Firstname", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -489,11 +489,11 @@ func (x *fastReflection_Post) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.Title = string(dAtA[iNdEx:postIndex])
+				x.Firstname = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 2:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Body", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Lastname", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -521,7 +521,7 @@ func (x *fastReflection_Post) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.Body = string(dAtA[iNdEx:postIndex])
+				x.Lastname = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 3:
 				if wireType != 2 {
@@ -613,7 +613,7 @@ func (x *fastReflection_Post) ProtoMethods() *protoiface.Methods {
 // versions:
 // 	protoc-gen-go v1.27.0
 // 	protoc        (unknown)
-// source: blog/blog/post.proto
+// source: blog/blog/author.proto
 
 const (
 	// Verify that this generated code is sufficiently up-to-date.
@@ -622,103 +622,104 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type Post struct {
+type Author struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Title   string `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
-	Body    string `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
-	Creator string `protobuf:"bytes,3,opt,name=creator,proto3" json:"creator,omitempty"`
-	Id      uint64 `protobuf:"varint,4,opt,name=id,proto3" json:"id,omitempty"`
+	Firstname string `protobuf:"bytes,1,opt,name=firstname,proto3" json:"firstname,omitempty"`
+	Lastname  string `protobuf:"bytes,2,opt,name=lastname,proto3" json:"lastname,omitempty"`
+	Creator   string `protobuf:"bytes,3,opt,name=creator,proto3" json:"creator,omitempty"`
+	Id        uint64 `protobuf:"varint,4,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *Post) Reset() {
-	*x = Post{}
+func (x *Author) Reset() {
+	*x = Author{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_blog_blog_post_proto_msgTypes[0]
+		mi := &file_blog_blog_author_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *Post) String() string {
+func (x *Author) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Post) ProtoMessage() {}
+func (*Author) ProtoMessage() {}
 
-// Deprecated: Use Post.ProtoReflect.Descriptor instead.
-func (*Post) Descriptor() ([]byte, []int) {
-	return file_blog_blog_post_proto_rawDescGZIP(), []int{0}
+// Deprecated: Use Author.ProtoReflect.Descriptor instead.
+func (*Author) Descriptor() ([]byte, []int) {
+	return file_blog_blog_author_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Post) GetTitle() string {
+func (x *Author) GetFirstname() string {
 	if x != nil {
-		return x.Title
+		return x.Firstname
 	}
 	return ""
 }
 
-func (x *Post) GetBody() string {
+func (x *Author) GetLastname() string {
 	if x != nil {
-		return x.Body
+		return x.Lastname
 	}
 	return ""
 }
 
-func (x *Post) GetCreator() string {
+func (x *Author) GetCreator() string {
 	if x != nil {
 		return x.Creator
 	}
 	return ""
 }
 
-func (x *Post) GetId() uint64 {
+func (x *Author) GetId() uint64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-var File_blog_blog_post_proto protoreflect.FileDescriptor
+var File_blog_blog_author_proto protoreflect.FileDescriptor
 
-var file_blog_blog_post_proto_rawDesc = []byte{
-	0x0a, 0x14, 0x62, 0x6c, 0x6f, 0x67, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x2f, 0x70, 0x6f, 0x73, 0x74,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x09, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x62, 0x6c, 0x6f,
-	0x67, 0x22, 0x5a, 0x0a, 0x04, 0x50, 0x6f, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74,
-	0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12,
-	0x12, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x62,
-	0x6f, 0x64, 0x79, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x03,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x0e, 0x0a,
-	0x02, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x42, 0x73, 0x0a,
-	0x0d, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x42, 0x09,
-	0x50, 0x6f, 0x73, 0x74, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x12, 0x62, 0x6c, 0x6f,
-	0x67, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0xa2,
-	0x02, 0x03, 0x42, 0x42, 0x58, 0xaa, 0x02, 0x09, 0x42, 0x6c, 0x6f, 0x67, 0x2e, 0x42, 0x6c, 0x6f,
-	0x67, 0xca, 0x02, 0x09, 0x42, 0x6c, 0x6f, 0x67, 0x5c, 0x42, 0x6c, 0x6f, 0x67, 0xe2, 0x02, 0x15,
-	0x42, 0x6c, 0x6f, 0x67, 0x5c, 0x42, 0x6c, 0x6f, 0x67, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74,
-	0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0a, 0x42, 0x6c, 0x6f, 0x67, 0x3a, 0x3a, 0x42, 0x6c,
-	0x6f, 0x67, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+var file_blog_blog_author_proto_rawDesc = []byte{
+	0x0a, 0x16, 0x62, 0x6c, 0x6f, 0x67, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x2f, 0x61, 0x75, 0x74, 0x68,
+	0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x09, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x62,
+	0x6c, 0x6f, 0x67, 0x22, 0x6c, 0x0a, 0x06, 0x41, 0x75, 0x74, 0x68, 0x6f, 0x72, 0x12, 0x1c, 0x0a,
+	0x09, 0x66, 0x69, 0x72, 0x73, 0x74, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x09, 0x66, 0x69, 0x72, 0x73, 0x74, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x6c,
+	0x61, 0x73, 0x74, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6c,
+	0x61, 0x73, 0x74, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74,
+	0x6f, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f,
+	0x72, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69,
+	0x64, 0x42, 0x75, 0x0a, 0x0d, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x62, 0x6c,
+	0x6f, 0x67, 0x42, 0x0b, 0x41, 0x75, 0x74, 0x68, 0x6f, 0x72, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50,
+	0x01, 0x5a, 0x12, 0x62, 0x6c, 0x6f, 0x67, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x62, 0x6c, 0x6f, 0x67,
+	0x2f, 0x62, 0x6c, 0x6f, 0x67, 0xa2, 0x02, 0x03, 0x42, 0x42, 0x58, 0xaa, 0x02, 0x09, 0x42, 0x6c,
+	0x6f, 0x67, 0x2e, 0x42, 0x6c, 0x6f, 0x67, 0xca, 0x02, 0x09, 0x42, 0x6c, 0x6f, 0x67, 0x5c, 0x42,
+	0x6c, 0x6f, 0x67, 0xe2, 0x02, 0x15, 0x42, 0x6c, 0x6f, 0x67, 0x5c, 0x42, 0x6c, 0x6f, 0x67, 0x5c,
+	0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0a, 0x42, 0x6c,
+	0x6f, 0x67, 0x3a, 0x3a, 0x42, 0x6c, 0x6f, 0x67, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_blog_blog_post_proto_rawDescOnce sync.Once
-	file_blog_blog_post_proto_rawDescData = file_blog_blog_post_proto_rawDesc
+	file_blog_blog_author_proto_rawDescOnce sync.Once
+	file_blog_blog_author_proto_rawDescData = file_blog_blog_author_proto_rawDesc
 )
 
-func file_blog_blog_post_proto_rawDescGZIP() []byte {
-	file_blog_blog_post_proto_rawDescOnce.Do(func() {
-		file_blog_blog_post_proto_rawDescData = protoimpl.X.CompressGZIP(file_blog_blog_post_proto_rawDescData)
+func file_blog_blog_author_proto_rawDescGZIP() []byte {
+	file_blog_blog_author_proto_rawDescOnce.Do(func() {
+		file_blog_blog_author_proto_rawDescData = protoimpl.X.CompressGZIP(file_blog_blog_author_proto_rawDescData)
 	})
-	return file_blog_blog_post_proto_rawDescData
+	return file_blog_blog_author_proto_rawDescData
 }
 
-var file_blog_blog_post_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_blog_blog_post_proto_goTypes = []interface{}{
-	(*Post)(nil), // 0: blog.blog.Post
+var file_blog_blog_author_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_blog_blog_author_proto_goTypes = []interface{}{
+	(*Author)(nil), // 0: blog.blog.Author
 }
-var file_blog_blog_post_proto_depIdxs = []int32{
+var file_blog_blog_author_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -726,14 +727,14 @@ var file_blog_blog_post_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_blog_blog_post_proto_init() }
-func file_blog_blog_post_proto_init() {
-	if File_blog_blog_post_proto != nil {
+func init() { file_blog_blog_author_proto_init() }
+func file_blog_blog_author_proto_init() {
+	if File_blog_blog_author_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_blog_blog_post_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Post); i {
+		file_blog_blog_author_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Author); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -749,18 +750,18 @@ func file_blog_blog_post_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_blog_blog_post_proto_rawDesc,
+			RawDescriptor: file_blog_blog_author_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_blog_blog_post_proto_goTypes,
-		DependencyIndexes: file_blog_blog_post_proto_depIdxs,
-		MessageInfos:      file_blog_blog_post_proto_msgTypes,
+		GoTypes:           file_blog_blog_author_proto_goTypes,
+		DependencyIndexes: file_blog_blog_author_proto_depIdxs,
+		MessageInfos:      file_blog_blog_author_proto_msgTypes,
 	}.Build()
-	File_blog_blog_post_proto = out.File
-	file_blog_blog_post_proto_rawDesc = nil
-	file_blog_blog_post_proto_goTypes = nil
-	file_blog_blog_post_proto_depIdxs = nil
+	File_blog_blog_author_proto = out.File
+	file_blog_blog_author_proto_rawDesc = nil
+	file_blog_blog_author_proto_goTypes = nil
+	file_blog_blog_author_proto_depIdxs = nil
 }
